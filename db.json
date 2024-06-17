@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Sản phẩm A mới cập nhật",
+      "price": 300000,
+      "quantyti": 50,
+      "image": "https://picsum.photos//300/300",
+      "description": "Mô tả sản phẩm A"
+    },
+    {
+      "id": 3,
+      "name": "Sản Phẩm 44444",
+      "price": 200000,
+      "quantyti": "20",
+      "image": "https://picsum.photos/300/300",
+      "description": "Sản phẩm B"
+    }
+  ],
+  "users": [
+    {
+      "email": "abc@gamil.com",
+      "password": "$2a$10$KavGhWIAlM5DD1L9vv4n0.CdbWuCtwvvpGNq/5bH2ht6i21Eecx0q",
+      "confimPassword": "1234567",
+      "id": 1
+    },
+    {
+      "email": "admin@gamil.com",
+      "password": "$2a$10$FJGggaUfXHVGaYCYu8UUsudfbcEA2QzzjckjQEfDVMlZP2Kq1CHQa",
+      "confirmPassword": "1234567",
+      "id": 2
+    },
+    {
+      "email": "ddd@gmail.com",
+      "password": "$2a$10$POybIDwHX0CEdqLvy7m7oOo6g6QyTV2AhVa.Pz.4h6UySwp8VWL2q",
+      "confirmPassword": "1111111",
+      "id": 3
+    }
+  ]
+}

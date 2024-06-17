@@ -1,0 +1,38 @@
+<div class="bg-white p-8 rounded-lg shadow-md w-full ">
+    <div class="flex justify-between items-center">
+        <h1>Danh sách sản phẩm</h1>
+        <a href="" class="btn btn-primary" routerLink="/admin/products/add">Thêm</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantyti</th>
+                <th scope="col">Description</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products, index as i">
+                <th scope="row">{{i + 1}}</th>
+                <td>
+                    <img [src]="product.image" width="100px" alt="">
+                </td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantyti}}</td>
+                <td>{{product.description}}</td>
+                <td>
+                    <button (click)="deleteProducts(product.id!)" class="btn btn-danger mx-3">Xóa</button>
+                    <a href="" [routerLink]="['/admin/products/', product.id ,'edit']">
+                        <button class="btn btn-primary">Sửa</button>
+                    </a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

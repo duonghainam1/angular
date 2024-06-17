@@ -1,0 +1,31 @@
+<div class="bg-white p-8 rounded-lg shadow-md w-full ">
+    <h1 class="text-3xl font-bold text-center my-6">Đăng ký</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <div class="form-text"
+                *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
+                <span *ngIf="form.get('email')?.hasError('required')">Bắt buộc phải nhập</span>
+                <span *ngIf="form.get('email')?.hasError('email')">Email không đúng định dạng</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+            <div class="form-text"
+                *ngIf="form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)">
+                <span *ngIf="form.get('password')?.hasError('required')">Bắt buộc phải nhập</span>
+                <span *ngIf="form.get('password')?.hasError('minLength')">Phải có ít nhất 6 kí tự</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ConfirmPassword</label>
+            <input type="password" class="form-control" formControlName="confirmPassword">
+            <div class="form-text" *ngIf="form.hasError('notMatch') && form.get('confirmPassword')?.touched">
+                Mật khẩu không khớp
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

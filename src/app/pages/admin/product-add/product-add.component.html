@@ -1,0 +1,42 @@
+<div class="bg-white p-8 rounded-lg shadow-md w-full ">
+    <h1 class="text-3xl font-bold text-center my-6">Thêm sản phẩm</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Tên sản phẩm</label>
+            <input type="text" class="form-control" formControlName="name">
+            <div class="form-text"
+                *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)">
+                <span *ngIf="form.get('name')?.hasError('required')">Bắt buộc phải nhập</span>
+                <span *ngIf="form.get('name')?.hasError('minLength')">Phải có ít nhất 3 kí tự trở lên</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Giá sản phẩm</label>
+            <input type="number" class="form-control" formControlName="price">
+            <div class="form-text"
+                *ngIf="form.get('price')?.invalid && (form.get('price')?.dirty || form.get('price')?.touched)">
+                <span *ngIf="form.get('price')?.hasError('required')">Bắt buộc phải nhập</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ảnh sản phẩm</label>
+            <input type="text" class="form-control" formControlName="image">
+            <div class="form-text"
+                *ngIf="form.get('image')?.invalid && (form.get('image')?.dirty || form.get('image')?.touched)">
+                <span *ngIf="form.get('image')?.hasError('required')">Bắt buộc phải nhập</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số lượng sản phẩm</label>
+            <input type="text" class="form-control" formControlName="quantyti">
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mô tả sản phẩm</label>
+            <textarea type="text" class="form-control" formControlName="description"></textarea>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
